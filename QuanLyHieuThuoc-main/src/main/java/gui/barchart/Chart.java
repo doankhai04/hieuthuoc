@@ -34,6 +34,7 @@ public class Chart extends javax.swing.JPanel {
         animator.setResolution(0);
         animator.setAcceleration(0.5f);
         animator.setDeceleration(0.5f);
+        this.blankPlotChart = new BlankPlotChart(); 
         blankPlotChart.setBlankPlotChatRender(new BlankPlotChatRender() {
             @Override
             public String getLabelText(int index) {

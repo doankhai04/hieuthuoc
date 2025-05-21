@@ -11,7 +11,7 @@ import java.sql.ResultSet;
  */
 public class JDBCConnection {
 
-    static String url = "jdbc:sqlserver://LEGION:1433;databasename=QLTHUOC;encrypt=true;trustServerCertificate=true";
+    static String url = "jdbc:sqlserver://localhost:1433;databasename=QLTHUOC;encrypt=true;trustServerCertificate=true;";
     static String user = "sa";
     static String password = "sapassword";
 

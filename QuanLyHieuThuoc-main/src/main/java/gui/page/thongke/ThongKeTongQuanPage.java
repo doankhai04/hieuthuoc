@@ -29,6 +29,11 @@ private CurveChart curveChart;
 
     public ThongKeTongQuanPage() {
         initComponents();
+         this.curveChart = new gui.curvechart.CurveChart(); // Initialize curveChart
+        jPanel14.setLayout(new java.awt.BorderLayout()); // Set layout for jPanel14
+        jPanel14.add(this.curveChart, java.awt.BorderLayout.CENTER); // Add curveChart to jPanel14
+        jPanel14.revalidate();
+        jPanel14.repaint();
         initChart();
         initHeader();
         tableLayout();
@@ -122,7 +127,7 @@ private CurveChart curveChart;
         jPanel1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         lblChart = new javax.swing.JLabel();
-        jPanel14 = curveChart = new gui.curvechart.CurveChart();
+        jPanel14 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();

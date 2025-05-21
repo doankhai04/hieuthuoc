@@ -28,6 +28,15 @@ private Chart chart;
 
     public ThongKeDoanhThuTheoThangPage() {
         initComponents();
+         // Khởi tạo và cấu hình Chart ở đây
+        this.chart = new gui.barchart.Chart(); // Khởi tạo đối tượng Chart của bạn
+
+        // Nếu jpanel2 là một JPanel thông thường được thiết kế để chứa biểu đồ:
+        jpanel2.setLayout(new java.awt.BorderLayout()); // Đảm bảo jpanel2 có layout
+        jpanel2.removeAll(); // Xóa các thành phần cũ nếu có
+        jpanel2.add(this.chart, java.awt.BorderLayout.CENTER); // Thêm chart vào jpanel2
+        jpanel2.revalidate();
+        jpanel2.repaint();
         chartLayout();
         tableLayout();
         loadDataset();
@@ -98,7 +107,7 @@ private Chart chart;
         btnStatistic = new javax.swing.JButton();
         btnReload = new javax.swing.JButton();
         btnExport = new javax.swing.JButton();
-        jpanel2 = jpanel2 = new gui.barchart.Chart();
+        jpanel2 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(230, 245, 245));
         setMinimumSize(new java.awt.Dimension(1130, 800));

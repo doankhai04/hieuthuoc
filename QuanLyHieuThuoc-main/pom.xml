@@ -26,6 +26,13 @@
             <version>3.4</version>
         </dependency>
 
+<dependency>
+    <groupId>com.microsoft.sqlserver</groupId>
+    <artifactId>mssql-jdbc</artifactId>
+    <version>12.10.0.jre11</version>
+    <scope>compile</scope>
+</dependency>
+
         <!-- FlatLaf Extras: Roboto font, SVG icon support -->
         <dependency>
             <groupId>com.formdev</groupId>
