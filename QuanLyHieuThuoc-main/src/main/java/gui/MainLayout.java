@@ -195,6 +195,7 @@ public class MainLayout extends javax.swing.JFrame {
         itemPanel.setPreferredSize(new java.awt.Dimension(250, 550));
 
         thongKeItem.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        thongKeItem.setIcon(new FlatSVGIcon("./icon/statistics.svg"));
         thongKeItem.setText("Biểu đồ");
         thongKeItem.setBorderPainted(false);
         thongKeItem.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

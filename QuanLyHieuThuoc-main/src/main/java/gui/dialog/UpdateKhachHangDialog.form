@@ -248,6 +248,12 @@
               </Properties>
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="txtNgayThamGia">
+              <Properties>
+                <Property name="dateFormatString" type="java.lang.String" value="dd/MM/yyyy"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[330, 40]"/>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

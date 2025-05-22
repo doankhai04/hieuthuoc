@@ -71,7 +71,7 @@ public class CreateNhanVienDialog extends javax.swing.JDialog {
             }
         }
 
-        if (txtNgayVaoLam.getDate() == null || !txtNgayVaoLam.getDateFormatString().equals("dd/MM/yyyy")) {
+        if (txtNgayVaoLam.getDate() == null /*|| !txtNgayVaoLam.getDateFormatString().equals("dd/MM/yyyy")*/) {
             MessageDialog.warring(this, "Ngày vào làm không được rỗng và có kiểu dd/MM/yyyy");
             return false;
         } else if (txtNgayVaoLam.getDate().after(new Date())) {
@@ -212,6 +212,10 @@ public class CreateNhanVienDialog extends javax.swing.JDialog {
         jLabel15.setMaximumSize(new java.awt.Dimension(44, 40));
         jLabel15.setPreferredSize(new java.awt.Dimension(150, 40));
         jPanel22.add(jLabel15);
+
+        txtNgayVaoLam.setDateFormatString("dd/MM/yyyy");
+        txtNgayVaoLam.setMinimumSize(new java.awt.Dimension(330, 40));
+        txtNgayVaoLam.setPreferredSize(new java.awt.Dimension(330, 40));
         jPanel22.add(txtNgayVaoLam);
 
         jPanel1.add(jPanel22);

@@ -218,6 +218,9 @@ public class UpdateNhanVienDialog extends javax.swing.JDialog {
         jLabel15.setMaximumSize(new java.awt.Dimension(44, 40));
         jLabel15.setPreferredSize(new java.awt.Dimension(150, 40));
         jPanel22.add(jLabel15);
+
+        txtNgayVaoLam.setDateFormatString("dd/MM/yyyy");
+        txtNgayVaoLam.setPreferredSize(new java.awt.Dimension(330, 40));
         jPanel22.add(txtNgayVaoLam);
 
         jPanel1.add(jPanel22);

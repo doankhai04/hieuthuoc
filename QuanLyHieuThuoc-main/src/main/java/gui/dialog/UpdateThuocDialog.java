@@ -403,6 +403,9 @@ public class UpdateThuocDialog extends javax.swing.JDialog {
         jLabel15.setMaximumSize(new java.awt.Dimension(44, 40));
         jLabel15.setPreferredSize(new java.awt.Dimension(150, 40));
         jPanel22.add(jLabel15);
+
+        txtHanSuDung.setDateFormatString("dd/MM/yyyy");
+        txtHanSuDung.setPreferredSize(new java.awt.Dimension(300, 40));
         jPanel22.add(txtHanSuDung);
 
         jPanel1.add(jPanel22);

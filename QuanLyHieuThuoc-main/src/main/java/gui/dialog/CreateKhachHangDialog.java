@@ -46,7 +46,7 @@ public class CreateKhachHangDialog extends javax.swing.JDialog {
             return false;
         }
 
-        if (txtNgayThamGia.getDate() == null || !txtNgayThamGia.getDateFormatString().equals("dd/MM/yyyy")) {
+        if (txtNgayThamGia.getDate() == null /*|| !txtNgayThamGia.getDateFormatString().equals("dd/MM/yyyy")*/) {
             MessageDialog.warring(this, "Ngày tham gia không được rỗng và có kiểu dd/MM/yyyy");
             return false;
         } else if (txtNgayThamGia.getDate().after(new Date())) {
@@ -166,6 +166,9 @@ public class CreateKhachHangDialog extends javax.swing.JDialog {
         jLabel15.setMaximumSize(new java.awt.Dimension(44, 40));
         jLabel15.setPreferredSize(new java.awt.Dimension(150, 40));
         jPanel22.add(jLabel15);
+
+        txtNgayThamGia.setDateFormatString("dd/MM/yyyy");
+        txtNgayThamGia.setPreferredSize(new java.awt.Dimension(330, 40));
         jPanel22.add(txtNgayThamGia);
 
         jPanel1.add(jPanel22);

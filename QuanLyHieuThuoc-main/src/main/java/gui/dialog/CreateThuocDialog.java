@@ -147,7 +147,7 @@ public class CreateThuocDialog extends javax.swing.JDialog {
             }
         }
         
-        if (txtHanSuDung.getDate() == null || !txtHanSuDung.getDateFormatString().equals("dd/MM/yyyy")) {
+        if (txtHanSuDung.getDate() == null /*|| !txtHanSuDung.getDateFormatString().equals("dd/MM/yyyy")*/) {
             MessageDialog.warring(this, "Hạn sử dụng không được để trống và có kiểu dd/MM/yyyy");
             return false;
         } else if (txtHanSuDung.getDate().before(new Date())) {
@@ -388,6 +388,9 @@ public class CreateThuocDialog extends javax.swing.JDialog {
         jLabel13.setMaximumSize(new java.awt.Dimension(44, 40));
         jLabel13.setPreferredSize(new java.awt.Dimension(150, 40));
         jPanel20.add(jLabel13);
+
+        txtHanSuDung.setDateFormatString("dd/MM/yyyy");
+        txtHanSuDung.setPreferredSize(new java.awt.Dimension(300, 40));
         jPanel20.add(txtHanSuDung);
 
         jPanel1.add(jPanel20);

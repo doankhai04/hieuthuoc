@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.time.LocalDate;
 import java.util.List;
 import javax.swing.JLabel;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import utils.Formatter;
@@ -28,14 +29,20 @@ public class ThongKeDoanhThuTungNgayTrongThangPage extends javax.swing.JPanel {
 
     public ThongKeDoanhThuTungNgayTrongThangPage() {
         initComponents();
+        this.chart = new gui.barchart.Chart(); // Khởi tạo đối tượng Chart của bạn
+        jPanel2.setLayout(new java.awt.BorderLayout()); // Đảm bảo jPanel2 có layout
+        jPanel2.removeAll(); // Xóa các thành phần cũ nếu có
+        jPanel2.add(this.chart, java.awt.BorderLayout.CENTER); // Thêm chart vào jPanel2
+        jPanel2.revalidate(); // Revalidate lại panel để đảm bảo layout được cập nhật
+        jPanel2.repaint();  // Repaint the panel
         chartLayout();
         tableLayout();
         loadDataset();
     }
 
     private void chartLayout() {
-        txtMonth.setValue(currentMonth - 1);
-        txtYear.setValue(currentYear);
+        txtMonth.setModel(new SpinnerNumberModel(currentMonth - 1, 1, 12, 1)); // Hoặc (currentMonth, 1, 12, 1)
+        txtYear.setModel(new SpinnerNumberModel(currentYear, 1900, currentYear, 1));
 
         chart.addLegend("Doanh thu", new Color(135, 189, 245));
         chart.addLegend("Chi phí", new Color(245, 189, 135));
@@ -118,7 +125,7 @@ public class ThongKeDoanhThuTungNgayTrongThangPage extends javax.swing.JPanel {
         btnStatistic = new javax.swing.JButton();
         btnReload = new javax.swing.JButton();
         btnExport = new javax.swing.JButton();
-        jPanel2 = chart = new gui.barchart.Chart();
+        jPanel2 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(230, 245, 245));
         setMinimumSize(new java.awt.Dimension(1130, 800));
@@ -225,7 +232,7 @@ public class ThongKeDoanhThuTungNgayTrongThangPage extends javax.swing.JPanel {
 
     private void btnStatisticActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStatisticActionPerformed
         if (isValidFilterFields()) {
-            int mounth = (int)txtMonth.getValue() + 1;
+            int mounth = (int)txtMonth.getValue();
             int year = (int)txtYear.getValue();
 
             listTK = new ThongKeController().getStatisticDaysByMonthYear(mounth, year);
@@ -239,7 +246,7 @@ public class ThongKeDoanhThuTungNgayTrongThangPage extends javax.swing.JPanel {
 
     private void btnReloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReloadActionPerformed
         txtMonth.setValue(currentMonth - 1);
-        txtYear.setValue(currentYear);
+        txtMonth.setValue(currentYear);
 
         listTK = new ThongKeController().getStatisticDaysByMonthYear(currentMonth, currentYear);
         loadDataset();
